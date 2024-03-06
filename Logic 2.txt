@@ -1,0 +1,319 @@
+Q Java program to add two matrices
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+
+class HelloWorld {
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+       
+        int[][] arr1 =new int[2][2];
+        int[][] arr2 =new int[2][2];
+       
+       //add values to matrix;
+       
+       addval(arr1);
+       addval(arr2);
+       
+       printarr(arr1);
+       printarr(arr2);
+       
+       addarr(arr1,arr2);
+       
+       
+    }
+    
+    public static void addval(int[][] arr){
+                Scanner sc=new Scanner(System.in);
+
+    System.out.println("enter the values for array "+arr);
+    
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j<arr[0].length;j++){
+                 int num=sc.nextInt();
+                 arr[i][j]=num;
+            }
+        }
+    }
+    
+    public static void printarr(int[][] arr){
+                Scanner sc=new Scanner(System.in);
+
+        System.out.println(arr+":");
+    
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j<arr[0].length;j++){
+                System.out.print(arr[i][j]);
+            }
+            System.out.println();
+        }
+    }
+    
+    
+    public static void addarr(int[][] arr1,int[][] arr2){
+                Scanner sc=new Scanner(System.in);
+
+        int[][]sum=new int [2][2];
+        for(int i=0;i<arr1.length;i++)
+        {
+            for(int j=0;j<arr1[0].length;j++){
+                sum[i][j]=arr1[i][j]+arr2[i][j];
+            }
+        }
+    
+        System.out.println("The resultant matrix:");
+        for(int i=0;i<sum.length;i++){
+            for(int j=0;j<sum[0].length;j++){
+                System.out.print(sum[i][j]);
+            }
+                System.out.println();
+            }
+        }
+    
+    
+}
+
+
+******************************************
+q- largest number 
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+
+class HelloWorld {
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+       
+        System.out.println("Enter number");
+        int num=sc.nextInt();
+        
+       addval(num);
+       
+    }
+    
+    public static void addval(int num){
+     Scanner sc=new Scanner(System.in);
+        int[] arr=new int[num];
+        System.out.println("enter the values "+num+" times ");
+    
+        for(int i=0;i<num;i++){
+            arr[i] =sc.nextInt();
+        }
+        
+        
+        System.out.println("Your choices:");
+        for(int i=0;i<num;i++){
+            System.out.print(arr[i]+",");
+        }
+        
+        int max=arr[0];
+        
+        for(int i=0;i<arr.length-1;i++){
+                if(arr[i+1]>arr[i]){
+                max=arr[i+1];
+            }
+            
+        
+        }
+        
+        System.out.println("The largest number is: "+max);
+        
+    }
+    
+   
+    
+    
+}
+
+
+
+*****************************************
+
+q- factorial 
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+
+class HelloWorld {
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+       
+        System.out.println("Enter number");
+        int num=sc.nextInt();
+        
+       fact(num);
+       
+    }
+    
+    public static void fact(int num){
+        int sum=1;
+    
+        for(int i=1;i<num;i++){
+            sum+=sum*i;
+        }
+        
+        
+        System.out.println("The factorial is "+sum);
+      
+    }
+    
+   
+    
+    
+}
+
+q- number reversal
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+
+class HelloWorld {
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+       
+       int num=sc.nextInt();
+       int sum=0;
+       while(num>0){
+           int digit=num%10;
+           sum=sum*10+digit;
+           num=num/10;
+       }
+       System.out.println(sum);
+       
+    }
+}
+
+q - sum of digits 
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+
+class HelloWorld {
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+       
+       int num=sc.nextInt();
+       int sum=0;
+       while(num>0){
+           int digit=num%10;
+           sum+=digit;
+           num=num/10;
+       }
+       System.out.println(sum);
+       
+    }
+}
+
+
+q- string reversal 
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+
+class HelloWorld {
+    public static void main(String[] args) {
+        
+       String s="hello";
+       
+       String abc="";
+       
+       for(int i=0;i<s.length();i++)
+       {
+           char ch=s.charAt(i);
+           
+           abc=ch+abc;
+       }
+       
+       System.out.println(abc);
+       
+    }
+}
+
+
+q- check if string is a palindrome
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+
+class HelloWorld {
+    public static void main(String[] args) {
+        
+       String s="hello";
+       
+       String abc="";
+       
+       for(int i=0;i<s.length();i++)
+       {
+           char ch=s.charAt(i);
+           
+           abc=ch+abc;
+       }
+       
+       System.out.println(abc);
+       
+       if(s==abc)
+       {
+           System.out.println("string is a palindrome");
+           
+       }
+       else{
+           System.out.println("string is not a palindrome");
+       }
+       
+    }
+}
+
+q- check if number is a palindrome
+
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+
+
+class HelloWorld {
+    public static void main(String[] args) {
+        
+       int num=12121;
+       int num1=num;
+      int newnum=0;
+      
+      while(num>0)
+      {
+          int digit=num%10;
+          newnum=newnum*10+digit;
+          num/=10;
+      }
+      
+      System.out.println(newnum);
+       
+      
+       
+       if(num1==newnum)
+       {
+           System.out.println("number is a palindrome");
+           
+       }
+       else{
+           System.out.println("number is not a palindrome");
+       }
+       
+    }
+}

@@ -1,0 +1,123 @@
+Group Anagrams:
+Given an array of strings, group anagrams together. An anagram group is a set of strings with the same characters in a different order.
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class GroupAnagrams {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        // Create a map to store anagrams
+        Map<String, List<String>> anagramGroups = new HashMap<>();
+
+        for (String word : strs) {
+            // Sort the characters in the word to create a unique key
+            char[] charArray = word.toCharArray();
+            Arrays.sort(charArray);
+            String sortedWord = new String(charArray);
+
+            // If the key is not in the map, create a new list for it
+            anagramGroups.putIfAbsent(sortedWord, new ArrayList<>());
+
+            // Add the original word to the list corresponding to the key
+            anagramGroups.get(sortedWord).add(word);
+        }
+
+        // Convert the values (lists of anagrams) into a list of lists
+        return new ArrayList<>(anagramGroups.values());
+    }
+
+    public static void main(String[] args) {
+        GroupAnagrams groupAnagrams = new GroupAnagrams();
+        String[] inputStrs = {"eat", "tea", "tan", "ate", "nat", "bat"};
+        List<List<String>> anagramGroups = groupAnagrams.groupAnagrams(inputStrs);
+        
+        // Print the grouped anagrams
+        for (List<String> group : anagramGroups) {
+            System.out.println(group);
+        }
+    }
+}
+
+String Compression:
+Implement a function to perform basic string compression using the counts of repeated characters. For example, the string "aabcccccaaa" would become "a2b1c5a3." using hash map
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class StringCompressionHashMap {
+
+    public static String compressString(String input) {
+        if (input == null || input.isEmpty()) {
+            return input;
+        }
+
+        StringBuilder compressed = new StringBuilder();
+        Map<Character, Integer> charCount = new HashMap<>();
+
+        // Count the characters and store in the HashMap
+        for (char c : input.toCharArray()) {
+            charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+        }
+
+        // Build the compressed string
+        for (Map.Entry<Character, Integer> entry : charCount.entrySet()) {
+            compressed.append(entry.getKey());
+            compressed.append(entry.getValue());
+        }
+
+        // Check if the compressed string is shorter than the original
+        if (compressed.length() < input.length()) {
+            return compressed.toString();
+        } else {
+            return input;
+        }
+    }
+
+    public static void main(String[] args) {
+        String input = "aabcccccaaa";
+        String compressed = compressString(input);
+        System.out.println("Compressed String: " + compressed);
+    }
+}
+
+First Unique Character in a String:
+Write a function to find the first non-repeating character in a string and return its index. If no such character exists, return -1.
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class FirstUniqueCharacter {
+
+    public static int firstUniqChar(String s) {
+        // Create a HashMap to store character frequencies
+        Map<Character, Integer> charCount = new HashMap<>();
+
+        // Populate the HashMap with character frequencies
+        for (char c : s.toCharArray()) {
+            charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+        }
+
+        // Iterate through the string to find the first unique character
+        for (int i = 0; i < s.length(); i++) {
+            if (charCount.get(s.charAt(i)) == 1) {
+                return i;
+            }
+        }
+
+        // If no unique character is found, return -1
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        String input = "leetcode";
+        int index = firstUniqChar(input);
+        if (index != -1) {
+            System.out.println("First unique character at index " + index);
+        } else {
+            System.out.println("No unique character found.");
+        }
+    }
+}
