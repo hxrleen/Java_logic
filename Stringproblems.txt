@@ -195,3 +195,32 @@ class HelloWorld {
     }
 }
 
+
+------------------------------------------------------------
+
+delimiter $$
+
+create function findsubstringpositions(input_string text, sub_string text)
+returns text
+deterministic
+begin
+    declare pos int default 1;
+    declare result text default '';
+    declare found_pos int;
+
+    set found_pos = locate(sub_string, input_string, pos);
+
+    while found_pos > 0 
+	do
+        if result != '' then
+            set result = concat(result, ',');
+        end if;
+        set result = concat(result, found_pos);
+        set pos = found_pos + length(sub_string);
+        set found_pos = locate(sub_string, input_string, pos);
+    end while;
+
+    return result;
+end
+$$
+delimiter ;
