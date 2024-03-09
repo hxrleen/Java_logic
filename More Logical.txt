@@ -1,0 +1,265 @@
+// Online Java Compiler
+
+// Sort a binary tree with only one traversal and using no extra space 
+
+class HelloWorld {
+    public static void main(String[] args) {
+       int[] arr={0,0,1,1,0,1,0,1,0,1};
+       
+       printarray(arr);
+       
+       sortarr(arr);
+       
+       System.out.println("The sorted array is:");
+       
+       printarray(arr);
+
+    }
+    
+    public static void printarray(int[] arr)
+    {
+        for(int num:arr)
+        {
+            System.out.print(num+",");
+        }
+    }
+    
+    
+    public static void sortarr(int[] arr)
+    {
+        int left=0;
+        int right=arr.length -1;
+        int temp;
+        
+        
+        while(left<=right)
+        {
+            if(arr[left]==0)
+            {
+                left++;
+            }
+            else if(arr[right]==1)
+            {
+                right--;
+                
+            }
+            else{
+                temp=arr[left];
+                arr[left]=arr[right];
+                arr[right]=temp;
+                left++;
+                right--;
+            }
+        }
+    }
+}
+
+**********************************************
+
+// Online Java Compiler
+
+// Fibonacci Series (1)
+
+class HelloWorld {
+    public static void main(String[] args) {
+int num=10;
+
+    fib(num);
+    
+    }
+    
+    public static void fib(int num)
+    {
+       int i=0;
+       int j=1;
+       
+       System.out.println(i+","+j);
+       
+       for(int n=0;n<num-2;n++)
+       {
+           int next=i+j;
+           i=j;
+           j=next;
+           
+                      System.out.print(next+",");
+
+       }
+    }
+    
+    
+   
+    
+}
+
+*************************************************
+
+public class ReverseWordsWithoutStringBuilder {
+    public static void main(String[] args) {
+        int[] arr={10,30,8,54,2};
+        
+        int min=arr[0];
+        int max=arr[0];
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            if(arr[i]<min)
+            {
+                min=arr[i];
+            }
+            else if(arr[i]>min)
+            {
+                max=arr[i];
+            }
+            
+        }
+        
+        System.out.println(min);
+        System.out.println(max);
+    }
+
+   
+}
+
+**********************************************
+
+import java.util.HashSet;
+import java.util.Set;
+
+public class UniqueCharacters {
+    public static void main(String[] args) {
+        String inputString = "hello world";
+        String result = removeDuplicates(inputString);
+
+        System.out.println("Original String: " + inputString);
+        System.out.println("String without repeating characters: " + result);
+    }
+
+    public static String removeDuplicates(String input) {
+        Set<Character> uniqueChars = new HashSet<>();
+        StringBuilder result = new StringBuilder();
+
+        for (char ch : input.toCharArray()) {
+            if (uniqueChars.add(ch)) {
+                // Character is not a duplicate, add it to the result string
+                result.append(ch);
+            }
+        }
+
+        return result.toString();
+    }
+}
+
+*********************************
+public class StringReversal {
+    public static void main(String[] args) {
+        String originalString = "Hello, World!";
+        String reversedString = reverseWithLoop(originalString);
+
+        System.out.println("Original String: " + originalString);
+        System.out.println("Reversed String: " + reversedString);
+    }
+
+    public static String reverseWithLoop(String input) {
+        char[] characters = input.toCharArray();
+        int start = 0;
+        int end = input.length() - 1;
+
+        while (start < end) {
+            // Swap characters at start and end indices
+            char temp = characters[start];
+            characters[start] = characters[end];
+            characters[end] = temp;
+
+            // Move indices towards each other
+            start++;
+            end--;
+        }
+
+        return new String(characters);
+    }
+}
+
+****************************************
+
+public class PrimeNumber {
+    public static void main(String[] args) {
+        int num = 17; // Replace with the number you want to check
+
+        if (isPrime(num)) {
+            System.out.println(num + " is a prime number.");
+        } else {
+            System.out.println(num + " is not a prime number.");
+        }
+    }
+
+    public static boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                // If num is divisible by any number between 2 and sqrt(num), it is not a prime number
+                return false;
+            }
+        }
+
+        // If no divisors are found, num is a prime number
+        return true;
+    }
+}
+**********************************************
+
+public class ReverseWords {
+    public static void main(String[] args) {
+        String input = " Welcome to Coding Ninjas ";
+        String reversedString = reverseWords(input);
+
+        System.out.println("Original String: \"" + input + "\"");
+        System.out.println("Reversed String: \"" + reversedString + "\"");
+    }
+
+    public static String reverseWords(String input) {
+        // Trim leading and trailing spaces and split the string into words
+        String[] words = input.trim().split("\\s+");
+
+        // Reverse the order of words
+        StringBuilder reversedBuilder = new StringBuilder();
+        for (int i = words.length - 1; i >= 0; i--) {
+            reversedBuilder.append(words[i]);
+            if (i > 0) {
+                reversedBuilder.append(" ");
+            }
+        }
+
+        return reversedBuilder.toString();
+    }
+}
+
+**************************************
+public class ReverseWordsWithoutStringBuilder {
+    public static void main(String[] args) {
+        String s="hello.my.name.is.harleen";
+        
+        String[] words=s.split("\\.");
+        
+       String s1="";
+        
+        for(int i=0;i<words.length;i+=2)
+        {
+            words[i]="abc";
+        }
+        
+       for(int i=0;i<words.length;i++)
+        {
+            s1+=words[i]+".";
+        }
+        
+        System.out.println(s1);
+    }
+
+   
+}
+*********************************************
+
+
