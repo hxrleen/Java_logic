@@ -263,3 +263,115 @@ public class ReverseWordsWithoutStringBuilder {
 *********************************************
 
 
+public class A{
+    public static void main(String args[])
+    {
+        Display(123);
+        Display("one two three");
+        Display(456);
+        Display("four five six");
+    }
+    
+    public static void Display(int num)
+    {
+        int sum=0;
+        while(num>0)
+        {
+            int digit=num%10;
+            sum=sum*10+digit;
+            num/=10;
+        }
+        
+        while(sum>0){
+            int digit=sum%10;
+            
+            switch(digit)
+            {
+                case 1:
+                    System.out.print("one ");
+                    break;
+                case 2:
+                    System.out.print("two ");
+                    break;
+                case 3:
+                    System.out.print("three ");
+                    break;
+                case 4:
+                    System.out.print("four ");
+                    break;
+                case 5:
+                    System.out.print("five ");
+                    break;
+                case 6:
+                    System.out.print("six ");
+                    break;
+                case 7:
+                    System.out.print("seven ");
+                    break;
+                case 8:
+                    System.out.print("eight ");
+                    break;
+                case 9:
+                    System.out.print("nine ");
+                    break;
+                case 0:
+                    System.out.print("zer ");
+                    break;
+                default: 
+                    System.out.print("invalid number");
+                    break;
+            }
+            
+            sum/=10;
+        }
+        System.out.println();
+
+    }
+    
+    
+    public static void Display(String num)
+    {
+        String[] newnum=num.split("\\s");
+        for(int a=0;a<newnum.length;a++)
+        {
+            switch(newnum[a])
+            {
+                 case "one":
+                    System.out.print(1);
+                    break;
+                case "two":
+                    System.out.print(2);
+                    break;
+                case "three":
+                    System.out.print(3);
+                    break;
+                case "four":
+                    System.out.print(4);
+                    break;
+                case "five":
+                    System.out.print(5);
+                    break;
+                case "six":
+                    System.out.print(6);
+                    break;
+                case "seven":
+                    System.out.print(7);
+                    break;
+                case "eight":
+                    System.out.print(8);
+                    break;
+                case "nine":
+                    System.out.print(9);
+                    break;
+                case "zero":
+                    System.out.print(0);
+                    break;
+                default: 
+                    System.out.print("invalid number");
+                    break;  
+            }
+        }
+        System.out.println();
+    }
+    
+}
