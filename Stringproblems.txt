@@ -224,3 +224,115 @@ begin
 end
 $$
 delimiter ;
+
+****************************************************************************************
+C:\Users\91830\Documents\workspace-spring-tool-suite-4-4.21.0.RELEASE\UserServicePro
+
+
+
+CDAC Chennai
+Adform LLC
+House of Code
+MorningStar
+RSL**
+Erutech
+Dmart
+Knight FinTech
+DePronto
+Billmart
+Crisil
+BTS **public class A{
+    public static void main(String[] args){
+        String str="Hello, how are you?";
+    
+         String newStr =ChangeStr(str);
+        
+        PrintArr(newStr);
+        
+        
+    }
+    
+    public static String ChangeStr(String str)
+    {
+        
+        StringBuilder s=new StringBuilder();
+        
+        for(int i=0;i<str.length();i++)
+        {
+            char ch=str.charAt(i);
+        
+            if(Character.isLetterOrDigit(ch))
+            {
+                s.append(str.charAt(i));
+            }
+                
+        }
+        
+        String abc=s.toString();
+        
+        return abc;
+        
+        
+        
+        
+    }
+    
+    public static void PrintArr(String arr)
+    {
+        for(int i=0;i<arr.length();i++)
+        {
+            System.out.print(arr.charAt(i));
+        }
+    }
+}
+********************************************************************************
+
+public class A{
+    public static void main(String[] args){
+        String str="Hello, how are you?";
+    
+         String newStr =ChangeStr(str);
+        
+        PrintArr(newStr);
+        
+        
+    }
+    
+    public static String ChangeStr(String str)
+    {
+        
+        StringBuilder s=new StringBuilder();
+        
+        for(int i=0;i<str.length();i++)
+        {
+            char ch =str.charAt(i);
+            if( (ch>='a' && ch<='z') ||
+                (ch>='A' && ch<='Z') ||
+                (ch>=0 && ch<=9) )
+            {
+                s.append(ch);
+            }
+                
+        }
+        
+        String abc=s.toString();
+        
+        return abc;
+        
+        
+        
+        
+    }
+    
+    public static void PrintArr(String arr)
+    {
+        for(int i=0;i<arr.length();i++)
+        {
+            System.out.print(arr.charAt(i));
+        }
+    }
+}
+
+
+
+************************************************************************
