@@ -1,0 +1,26 @@
+
+import java.io.*; 
+import java.util.*; 
+import java.net.*; 
+class demo { 
+    public static void main(String[] args) 
+    { 
+          // Host 
+        String host = "www.google.com"; 
+
+        try { 
+            
+            // calling the function which gives the IP 
+            // Address from the given host 
+            InetAddress[] iaddress 
+                = InetAddress.getAllByName(host); 
+  
+            for (InetAddress ipaddresses : iaddress) { 
+                System.out.println(ipaddresses.toString()); 
+            } 
+        } 
+        catch (UnknownHostException e) { 
+            System.out.println(e); 
+        } 
+    } 
+}
